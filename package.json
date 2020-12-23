@@ -1,0 +1,54 @@
+{
+  "name": "gelato-instadapp",
+  "version": "1.0.0",
+  "description": "The smart contract and tests for gelato-instadapp prototypes",
+  "repository": "https://github.com/gelatodigital/gelato-instadapp",
+  "author": "gitpusha",
+  "private": false,
+  "scripts": {
+    "rebase": "HUSKY_SKIP_HOOKS=1 git rebase",
+    "compile": "npx hardhat compile",
+    "deploy:mainnet": "npx hardhat deploy --network mainnet",
+    "format": "prettier --write .",
+    "lint": "eslint --cache . && yarn lint:sol",
+    "lint:sol": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "eslint --cache --fix . && solhint --fix contracts/**/*.sol",
+    "test": "npx hardhat test",
+    "test:gas": "REPORT_GAS=1 npx hardhat test",
+    "debug": "DEBUG=true yarn compile && npx hardhat test"
+  },
+  "devDependencies": {
+    "@codechecks/client": "0.1.10",
+    "@gelatonetwork/core": "1.5.1",
+    "@nomiclabs/hardhat-ethers": "2.0.1",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "@openzeppelin/contracts": "3.3.0",
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "eslint": "7.15.0",
+    "eslint-config-prettier": "7.0.0",
+    "ethereum-waffle": "3.2.1",
+    "ethers": "5.0.24",
+    "hardhat": "2.0.5",
+    "hardhat-deploy": "0.7.0-beta.38",
+    "hardhat-deploy-ethers": "0.3.0-beta.7",
+    "hardhat-gas-reporter": "1.0.3",
+    "husky": ">=4",
+    "lint-staged": "10.5.2",
+    "prettier": "2.2.1",
+    "prettier-plugin-solidity": "1.0.0-beta.1",
+    "solhint": "3.3.2",
+    "solhint-plugin-prettier": "0.0.5"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn install && yarn compile --force && yarn lint:sol && lint-staged",
+      "pre-push": "git fetch origin && HUSKY_SKIP_HOOKS=1 git rebase origin/master && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,sol,json,css,md}": "prettier --write"
+  }
+}

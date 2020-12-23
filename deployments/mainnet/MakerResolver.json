@@ -1,0 +1,84 @@
+{
+  "address": "0x23736df236bec6710683fc7200c55528d09c6901",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMakerVaultCollateralBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMakerVaultDebt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xe0a65f2b96c346bbb6ac9210739d32e4d076f6cf5025dbed578153d004baefbd",
+  "receipt": {
+    "to": null,
+    "from": "0xe1f076849b781b1395fd332dc1758dbc129be6ec",
+    "contractAddress": "0x23736df236bec6710683fc7200c55528d09c6901",
+    "transactionIndex": "0x7f",
+    "gasUsed": "0x530f2",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xc74243b6a135cbf27bcc2246120ea5b2d00b4ba10e13d25ec8998f16a153bcdd",
+    "transactionHash": "0xe0a65f2b96c346bbb6ac9210739d32e4d076f6cf5025dbed578153d004baefbd",
+    "logs": [],
+    "blockNumber": "0xabf777",
+    "cumulativeGasUsed": "0x725864",
+    "status": "0x1"
+  },
+  "args": [],
+  "solcInputHash": "89383a6e8e4256890d851f32690baa57",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_vaultId\",\"type\":\"uint256\"}],\"name\":\"getMakerVaultCollateralBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_vaultId\",\"type\":\"uint256\"}],\"name\":\"getMakerVaultDebt\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getMakerVaultCollateralBalance(uint256)\":{\"details\":\"Return Collateral in wad of the vault associated to the vaultId.\"},\"getMakerVaultDebt(uint256)\":{\"details\":\"Return Debt in wad of the vault associated to the vaultId.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/contracts/resolvers/MakerResolver.sol\":\"MakerResolver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/constants/CMaker.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\naddress constant MCD_MANAGER = 0x5ef30b9986345249bc32d8928B7ee64DE9435E39;\",\"keccak256\":\"0x033c9d09b895b11a9edba77e891a7b3dbf1f360b5a141a40eb5c634be438dddd\",\"license\":\"UNLICENSED\"},\"contracts/contracts/resolvers/MakerResolver.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\nimport {\\n    _getMakerRawVaultDebt,\\n    _getMakerVaultCollateralBalance\\n} from \\\"../../functions/dapps/FMaker.sol\\\";\\n\\ncontract MakerResolver {\\n    /// @dev Return Debt in wad of the vault associated to the vaultId.\\n    function getMakerVaultDebt(uint256 _vaultId) public view returns (uint256) {\\n        return _getMakerRawVaultDebt(_vaultId);\\n    }\\n\\n    /// @dev Return Collateral in wad of the vault associated to the vaultId.\\n    function getMakerVaultCollateralBalance(uint256 _vaultId)\\n        public\\n        view\\n        returns (uint256)\\n    {\\n        return _getMakerVaultCollateralBalance(_vaultId);\\n    }\\n}\\n\",\"keccak256\":\"0xda66b2541205ddfb19273aab20f4b2b652f687aa6ffbb5845c17bb9e4b7100b0\",\"license\":\"UNLICENSED\"},\"contracts/functions/dapps/FMaker.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\nimport {MCD_MANAGER} from \\\"../../constants/CMaker.sol\\\";\\nimport {IMcdManager} from \\\"../../interfaces/dapps/Maker/IMcdManager.sol\\\";\\nimport {IVat} from \\\"../../interfaces/dapps/Maker/IVat.sol\\\";\\nimport {RAY, sub, mul} from \\\"../../vendor/DSMath.sol\\\";\\n\\nfunction _getMakerVaultDebt(uint256 _vaultId) view returns (uint256 wad) {\\n    IMcdManager manager = IMcdManager(MCD_MANAGER);\\n\\n    (bytes32 ilk, address urn) = _getVaultData(manager, _vaultId);\\n    IVat vat = IVat(manager.vat());\\n    (, uint256 rate, , , ) = vat.ilks(ilk);\\n    (, uint256 art) = vat.urns(ilk, urn);\\n    uint256 dai = vat.dai(urn);\\n\\n    uint256 rad = sub(mul(art, rate), dai);\\n    wad = rad / RAY;\\n\\n    wad = mul(wad, RAY) < rad ? wad + 1 : wad;\\n}\\n\\nfunction _getMakerRawVaultDebt(uint256 _vaultId) view returns (uint256 tab) {\\n    IMcdManager manager = IMcdManager(MCD_MANAGER);\\n\\n    (bytes32 ilk, address urn) = _getVaultData(manager, _vaultId);\\n    IVat vat = IVat(manager.vat());\\n    (, uint256 rate, , , ) = vat.ilks(ilk);\\n    (, uint256 art) = vat.urns(ilk, urn);\\n\\n    uint256 rad = mul(art, rate);\\n\\n    tab = rad / RAY;\\n    tab = mul(tab, RAY) < rad ? tab + 1 : tab;\\n}\\n\\nfunction _getMakerVaultCollateralBalance(uint256 _vaultId)\\n    view\\n    returns (uint256)\\n{\\n    IMcdManager manager = IMcdManager(MCD_MANAGER);\\n\\n    IVat vat = IVat(manager.vat());\\n    (bytes32 ilk, address urn) = _getVaultData(manager, _vaultId);\\n    (uint256 ink, ) = vat.urns(ilk, urn);\\n\\n    return ink;\\n}\\n\\nfunction _getVaultData(IMcdManager manager, uint256 vault)\\n    view\\n    returns (bytes32 ilk, address urn)\\n{\\n    ilk = manager.ilks(vault);\\n    urn = manager.urns(vault);\\n}\\n\",\"keccak256\":\"0x916f03bd9a6b88bba93ae455dfecc525f78962b8a446d3151abca20876fe354e\",\"license\":\"UNLICENSED\"},\"contracts/interfaces/dapps/Maker/IMcdManager.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\ninterface IMcdManager {\\n    function ilks(uint256) external view returns (bytes32);\\n\\n    function urns(uint256) external view returns (address);\\n\\n    function vat() external view returns (address);\\n}\\n\",\"keccak256\":\"0x16e87079710830c27477ce17aeb5baa531868c81680fdb354a72c6ba9b54c799\",\"license\":\"UNLICENSED\"},\"contracts/interfaces/dapps/Maker/IVat.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\ninterface IVat {\\n    function ilks(bytes32)\\n        external\\n        view\\n        returns (\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256,\\n            uint256\\n        );\\n\\n    function dai(address) external view returns (uint256);\\n\\n    function urns(bytes32, address) external view returns (uint256, uint256);\\n}\\n\",\"keccak256\":\"0xde979af6019a257b13de06e94180a344fe8cd2e7dc0790988b8f6204a01f95e8\",\"license\":\"UNLICENSED\"},\"contracts/vendor/DSMath.sol\":{\"content\":\"// \\\"SPDX-License-Identifier: AGPL-3.0-or-later\\\"\\n/// math.sol -- mixin for inline numerical wizardry\\n\\n// This program is free software: you can redistribute it and/or modify\\n// it under the terms of the GNU General Public License as published by\\n// the Free Software Foundation, either version 3 of the License, or\\n// (at your option) any later version.\\n\\n// This program is distributed in the hope that it will be useful,\\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\\n// GNU General Public License for more details.\\n\\n// You should have received a copy of the GNU General Public License\\n// along with this program.  If not, see <http://www.gnu.org/licenses/>.\\n\\npragma solidity 0.7.4;\\n\\nfunction add(uint x, uint y) pure returns (uint z) {\\n    require((z = x + y) >= x, \\\"ds-math-add-overflow\\\");\\n}\\nfunction sub(uint x, uint y) pure returns (uint z) {\\n    require((z = x - y) <= x, \\\"ds-math-sub-underflow\\\");\\n}\\nfunction mul(uint x, uint y) pure returns (uint z) {\\n    require(y == 0 || (z = x * y) / y == x, \\\"ds-math-mul-overflow\\\");\\n}\\n\\nfunction min(uint x, uint y) pure returns (uint z) {\\n    return x <= y ? x : y;\\n}\\nfunction max(uint x, uint y) pure returns (uint z) {\\n    return x >= y ? x : y;\\n}\\nfunction imin(int x, int y) pure returns (int z) {\\n    return x <= y ? x : y;\\n}\\nfunction imax(int x, int y) pure returns (int z) {\\n    return x >= y ? x : y;\\n}\\n\\nuint constant WAD = 10 ** 18;\\nuint constant RAY = 10 ** 27;\\n\\n//rounds to zero if x*y < WAD / 2\\nfunction wmul(uint x, uint y) pure returns (uint z) {\\n    z = add(mul(x, y), WAD / 2) / WAD;\\n}\\n//rounds to zero if x*y < WAD / 2\\nfunction rmul(uint x, uint y) pure returns (uint z) {\\n    z = add(mul(x, y), RAY / 2) / RAY;\\n}\\n//rounds to zero if x*y < WAD / 2\\nfunction wdiv(uint x, uint y) pure returns (uint z) {\\n    z = add(mul(x, WAD), y / 2) / y;\\n}\\n//rounds to zero if x*y < RAY / 2\\nfunction rdiv(uint x, uint y) pure returns (uint z) {\\n    z = add(mul(x, RAY), y / 2) / y;\\n}\\n\\n// This famous algorithm is called \\\"exponentiation by squaring\\\"\\n// and calculates x^n with x as fixed-point and n as regular unsigned.\\n//\\n// It's O(log n), instead of O(n) for naive repeated multiplication.\\n//\\n// These facts are why it works:\\n//\\n//  If n is even, then x^n = (x^2)^(n/2).\\n//  If n is odd,  then x^n = x * x^(n-1),\\n//   and applying the equation for even x gives\\n//    x^n = x * (x^2)^((n-1) / 2).\\n//\\n//  Also, EVM division is flooring and\\n//    floor[(n-1) / 2] = floor[n / 2].\\n//\\nfunction rpow(uint x, uint n) pure returns (uint z) {\\n    z = n % 2 != 0 ? x : RAY;\\n\\n    for (n /= 2; n != 0; n /= 2) {\\n        x = rmul(x, x);\\n\\n        if (n % 2 != 0) {\\n            z = rmul(z, x);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x78264c5d3029a613d0c7a875efa73b1826a9b22b296b608f831f5e8e69359c88\",\"license\":\"AGPL-3.0-or-later\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610532806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063bbc76fd61461003b578063ec91325d1461006a575b600080fd5b6100586004803603602081101561005157600080fd5b5035610087565b60408051918252519081900360200190f35b6100586004803603602081101561008057600080fd5b5035610098565b6000610092826100a3565b92915050565b6000610092826101c4565b600080735ef30b9986345249bc32d8928b7ee64de9435e3990506000816001600160a01b03166336569e776040518163ffffffff1660e01b815260040160206040518083038186803b1580156100f857600080fd5b505afa15801561010c573d6000803e3d6000fd5b505050506040513d602081101561012257600080fd5b5051905060008061013384876103a4565b915091506000836001600160a01b0316632424be5c84846040518363ffffffff1660e01b815260040180838152602001826001600160a01b0316815260200192505050604080518083038186803b15801561018d57600080fd5b505afa1580156101a1573d6000803e3d6000fd5b505050506040513d60408110156101b757600080fd5b5051979650505050505050565b6000735ef30b9986345249bc32d8928b7ee64de9435e3981806101e783866103a4565b915091506000836001600160a01b03166336569e776040518163ffffffff1660e01b815260040160206040518083038186803b15801561022657600080fd5b505afa15801561023a573d6000803e3d6000fd5b505050506040513d602081101561025057600080fd5b505160408051636cb1c69b60e11b81526004810186905290519192506000916001600160a01b0384169163d9638d369160248083019260a0929190829003018186803b15801561029f57600080fd5b505afa1580156102b3573d6000803e3d6000fd5b505050506040513d60a08110156102c957600080fd5b5060200151604080516309092f9760e21b8152600481018790526001600160a01b038681166024830152825193945060009390861692632424be5c9260448082019391829003018186803b15801561032057600080fd5b505afa158015610334573d6000803e3d6000fd5b505050506040513d604081101561034a57600080fd5b50602001519050600061035d8284610499565b90506b033b2e3c9fd0803ce80000008104975080610387896b033b2e3c9fd0803ce8000000610499565b106103925787610397565b876001015b9998505050505050505050565b600080836001600160a01b0316632c2cb9fd846040518263ffffffff1660e01b81526004018082815260200191505060206040518083038186803b1580156103eb57600080fd5b505afa1580156103ff573d6000803e3d6000fd5b505050506040513d602081101561041557600080fd5b505160408051632726b07360e01b81526004810186905290519193506001600160a01b03861691632726b07391602480820192602092909190829003018186803b15801561046257600080fd5b505afa158015610476573d6000803e3d6000fd5b505050506040513d602081101561048c57600080fd5b5051919491935090915050565b60008115806104b4575050808202828282816104b157fe5b04145b610092576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6d756c2d6f766572666c6f7760601b604482015290519081900360640190fdfea26469706673582212209e3ad68cca2f6d8b552c8d7beb7b4bb20f6b30b70c449cbeecd749d8d946c43d64736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063bbc76fd61461003b578063ec91325d1461006a575b600080fd5b6100586004803603602081101561005157600080fd5b5035610087565b60408051918252519081900360200190f35b6100586004803603602081101561008057600080fd5b5035610098565b6000610092826100a3565b92915050565b6000610092826101c4565b600080735ef30b9986345249bc32d8928b7ee64de9435e3990506000816001600160a01b03166336569e776040518163ffffffff1660e01b815260040160206040518083038186803b1580156100f857600080fd5b505afa15801561010c573d6000803e3d6000fd5b505050506040513d602081101561012257600080fd5b5051905060008061013384876103a4565b915091506000836001600160a01b0316632424be5c84846040518363ffffffff1660e01b815260040180838152602001826001600160a01b0316815260200192505050604080518083038186803b15801561018d57600080fd5b505afa1580156101a1573d6000803e3d6000fd5b505050506040513d60408110156101b757600080fd5b5051979650505050505050565b6000735ef30b9986345249bc32d8928b7ee64de9435e3981806101e783866103a4565b915091506000836001600160a01b03166336569e776040518163ffffffff1660e01b815260040160206040518083038186803b15801561022657600080fd5b505afa15801561023a573d6000803e3d6000fd5b505050506040513d602081101561025057600080fd5b505160408051636cb1c69b60e11b81526004810186905290519192506000916001600160a01b0384169163d9638d369160248083019260a0929190829003018186803b15801561029f57600080fd5b505afa1580156102b3573d6000803e3d6000fd5b505050506040513d60a08110156102c957600080fd5b5060200151604080516309092f9760e21b8152600481018790526001600160a01b038681166024830152825193945060009390861692632424be5c9260448082019391829003018186803b15801561032057600080fd5b505afa158015610334573d6000803e3d6000fd5b505050506040513d604081101561034a57600080fd5b50602001519050600061035d8284610499565b90506b033b2e3c9fd0803ce80000008104975080610387896b033b2e3c9fd0803ce8000000610499565b106103925787610397565b876001015b9998505050505050505050565b600080836001600160a01b0316632c2cb9fd846040518263ffffffff1660e01b81526004018082815260200191505060206040518083038186803b1580156103eb57600080fd5b505afa1580156103ff573d6000803e3d6000fd5b505050506040513d602081101561041557600080fd5b505160408051632726b07360e01b81526004810186905290519193506001600160a01b03861691632726b07391602480820192602092909190829003018186803b15801561046257600080fd5b505afa158015610476573d6000803e3d6000fd5b505050506040513d602081101561048c57600080fd5b5051919491935090915050565b60008115806104b4575050808202828282816104b157fe5b04145b610092576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6d756c2d6f766572666c6f7760601b604482015290519081900360640190fdfea26469706673582212209e3ad68cca2f6d8b552c8d7beb7b4bb20f6b30b70c449cbeecd749d8d946c43d64736f6c63430007040033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getMakerVaultCollateralBalance(uint256)": {
+        "details": "Return Collateral in wad of the vault associated to the vaultId."
+      },
+      "getMakerVaultDebt(uint256)": {
+        "details": "Return Debt in wad of the vault associated to the vaultId."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

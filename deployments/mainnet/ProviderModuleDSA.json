@@ -1,0 +1,310 @@
+{
+  "address": "0x732d0856dfD0D7c7F4b517Ac25Fe30A7A8b1956A",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IndexInterface",
+          "name": "_index",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_gelatoCore",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "contract IGelatoCondition",
+                  "name": "inst",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct Condition[]",
+              "name": "conditions",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "enum Operation",
+                  "name": "operation",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "enum DataFlow",
+                  "name": "dataFlow",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "termsOkCheck",
+                  "type": "bool"
+                }
+              ],
+              "internalType": "struct Action[]",
+              "name": "actions",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "selfProviderGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "selfProviderGasPriceCeil",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Task",
+          "name": "_task",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "execPayload",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "payload",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "execRevertCheck",
+      "outputs": [],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gelatoCore",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "index",
+      "outputs": [
+        {
+          "internalType": "contract IndexInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userProxy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "contract IGelatoCondition",
+                  "name": "inst",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct Condition[]",
+              "name": "conditions",
+              "type": "tuple[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "addr",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "enum Operation",
+                  "name": "operation",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "enum DataFlow",
+                  "name": "dataFlow",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "termsOkCheck",
+                  "type": "bool"
+                }
+              ],
+              "internalType": "struct Action[]",
+              "name": "actions",
+              "type": "tuple[]"
+            },
+            {
+              "internalType": "uint256",
+              "name": "selfProviderGasLimit",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "selfProviderGasPriceCeil",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Task",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "name": "isProvided",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb7dcd3ec3fec8b967895c43a4592114ecc5c6c97f7fb948d2331110b8abba153",
+  "receipt": {
+    "to": null,
+    "from": "0x5B753BF02a42bC73B5846dfd16a8F2e082b99a6a",
+    "contractAddress": "0x732d0856dfD0D7c7F4b517Ac25Fe30A7A8b1956A",
+    "transactionIndex": 197,
+    "gasUsed": "614091",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x5160ba3207de95162c6af32fa726ae4aad945538d660b659cbe5f49f834f53da",
+    "transactionHash": "0xb7dcd3ec3fec8b967895c43a4592114ecc5c6c97f7fb948d2331110b8abba153",
+    "logs": [],
+    "blockNumber": 11366767,
+    "cumulativeGasUsed": "12092718",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x2971AdFa57b20E5a416aE5a708A8655A9c74f723",
+    "0x025030BdAa159f281cAe63873E68313a703725A5"
+  ],
+  "solcInputHash": "07a68d6422a92bd1de0d4e1d5ebbd24f",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IndexInterface\",\"name\":\"_index\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_gelatoCore\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"components\":[{\"components\":[{\"internalType\":\"contract IGelatoCondition\",\"name\":\"inst\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Condition[]\",\"name\":\"conditions\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"enum Operation\",\"name\":\"operation\",\"type\":\"uint8\"},{\"internalType\":\"enum DataFlow\",\"name\":\"dataFlow\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"termsOkCheck\",\"type\":\"bool\"}],\"internalType\":\"struct Action[]\",\"name\":\"actions\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"selfProviderGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"selfProviderGasPriceCeil\",\"type\":\"uint256\"}],\"internalType\":\"struct Task\",\"name\":\"_task\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"execPayload\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"payload\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"execRevertCheck\",\"outputs\":[],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gelatoCore\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"index\",\"outputs\":[{\"internalType\":\"contract IndexInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userProxy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"components\":[{\"components\":[{\"internalType\":\"contract IGelatoCondition\",\"name\":\"inst\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Condition[]\",\"name\":\"conditions\",\"type\":\"tuple[]\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"enum Operation\",\"name\":\"operation\",\"type\":\"uint8\"},{\"internalType\":\"enum DataFlow\",\"name\":\"dataFlow\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"termsOkCheck\",\"type\":\"bool\"}],\"internalType\":\"struct Action[]\",\"name\":\"actions\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256\",\"name\":\"selfProviderGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"selfProviderGasPriceCeil\",\"type\":\"uint256\"}],\"internalType\":\"struct Task\",\"name\":\"\",\"type\":\"tuple\"}],\"name\":\"isProvided\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"execPayload(uint256,address,address,((address,bytes)[],(address,bytes,uint8,uint8,uint256,bool)[],uint256,uint256),uint256)\":{\"details\":\"DS PROXY ONLY ALLOWS DELEGATE CALL for single actions, that's why we also use multisend\"},\"execRevertCheck(bytes)\":{\"details\":\"Overriding fns should revert with the revertMsg they detected on the userProxy\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/contracts/gelato/ProviderModuleDSA.sol\":\"ProviderModuleDSA\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/contracts/gelato/ProviderModuleDSA.sol\":{\"content\":\"// \\\"SPDX-License-Identifier: UNLICENSED\\\"\\npragma solidity 0.7.4;\\npragma experimental ABIEncoderV2;\\n\\n// solhint-disable\\n\\nenum Operation {Call, Delegatecall}\\n\\nenum DataFlow {None, In, Out, InAndOut}\\n\\ninterface IGelatoCondition {\\n    /// @notice GelatoCore calls this to verify securely the specified Condition securely\\n    /// @dev Be careful only to encode a Task's condition.data as is and not with the\\n    ///  \\\"ok\\\" selector or _taskReceiptId, since those two things are handled by GelatoCore.\\n    /// @param _taskReceiptId This is passed by GelatoCore so we can rely on it as a secure\\n    ///  source of Task identification.\\n    /// @param _conditionData This is the Condition.data field developers must encode their\\n    ///  Condition's specific parameters in.\\n    /// @param _cycleId For Tasks that are executed as part of a cycle.\\n    function ok(\\n        uint256 _taskReceiptId,\\n        bytes calldata _conditionData,\\n        uint256 _cycleId\\n    ) external view returns (string memory);\\n}\\n\\nstruct Condition {\\n    IGelatoCondition inst; // can be AddressZero for self-conditional Actions\\n    bytes data; // can be bytes32(0) for self-conditional Actions\\n}\\n\\nstruct Action {\\n    address addr;\\n    bytes data;\\n    Operation operation;\\n    DataFlow dataFlow;\\n    uint256 value;\\n    bool termsOkCheck;\\n}\\n\\nstruct Task {\\n    Condition[] conditions; // optional\\n    Action[] actions;\\n    uint256 selfProviderGasLimit; // optional: 0 defaults to gelatoMaxGas\\n    uint256 selfProviderGasPriceCeil; // optional: 0 defaults to NO_CEIL\\n}\\n\\ninterface IGelatoProviderModule {\\n    /// @notice Check if provider agrees to pay for inputted task receipt\\n    /// @dev Enables arbitrary checks by provider\\n    /// @param _userProxy The smart contract account of the user who submitted the Task.\\n    /// @param _provider The account of the Provider who uses the ProviderModule.\\n    /// @param _task Gelato Task to be executed.\\n    /// @return \\\"OK\\\" if provider agrees\\n    function isProvided(\\n        address _userProxy,\\n        address _provider,\\n        Task calldata _task\\n    ) external view returns (string memory);\\n\\n    /// @notice Convert action specific payload into proxy specific payload\\n    /// @dev Encoded multiple actions into a multisend\\n    /// @param _taskReceiptId Unique ID of Gelato Task to be executed.\\n    /// @param _userProxy The smart contract account of the user who submitted the Task.\\n    /// @param _provider The account of the Provider who uses the ProviderModule.\\n    /// @param _task Gelato Task to be executed.\\n    /// @param _cycleId For Tasks that form part of a cycle/chain.\\n    /// @return Encoded payload that will be used for low-level .call on user proxy\\n    /// @return checkReturndata if true, fwd returndata from userProxy.call to ProviderModule\\n    function execPayload(\\n        uint256 _taskReceiptId,\\n        address _userProxy,\\n        address _provider,\\n        Task calldata _task,\\n        uint256 _cycleId\\n    ) external view returns (bytes memory, bool checkReturndata);\\n\\n    /// @notice Called by GelatoCore.exec to verifiy that no revert happend on userProxy\\n    /// @dev If a caught revert is detected, this fn should revert with the detected error\\n    /// @param _proxyReturndata Data from GelatoCore._exec.userProxy.call(execPayload)\\n    function execRevertCheck(bytes calldata _proxyReturndata) external pure;\\n}\\n\\nabstract contract GelatoProviderModuleStandard is IGelatoProviderModule {\\n    string internal constant OK = \\\"OK\\\";\\n\\n    function isProvided(\\n        address,\\n        address,\\n        Task calldata\\n    ) external view virtual override returns (string memory) {\\n        return OK;\\n    }\\n\\n    /// @dev Overriding fns should revert with the revertMsg they detected on the userProxy\\n    function execRevertCheck(bytes calldata) external pure virtual override {\\n        // By default no reverts detected => do nothing\\n    }\\n}\\n\\n/// @dev InstaDapp Index\\ninterface IndexInterface {\\n    function connectors(uint256 version) external view returns (address);\\n\\n    function list() external view returns (address);\\n}\\n\\n/// @dev InstaDapp List\\ninterface ListInterface {\\n    function accountID(address _account) external view returns (uint64);\\n}\\n\\n/// @dev InstaDapp Connectors\\ninterface ConnectorsInterface {\\n    function isConnector(address[] calldata logicAddr)\\n        external\\n        view\\n        returns (bool);\\n\\n    function isStaticConnector(address[] calldata logicAddr)\\n        external\\n        view\\n        returns (bool);\\n}\\n\\n/// @dev InstaDapp Defi Smart Account wallet\\ninterface AccountInterface {\\n    function version() external view returns (uint256);\\n\\n    function isAuth(address user) external view returns (bool);\\n\\n    function shield() external view returns (bool);\\n\\n    function cast(\\n        address[] calldata _targets,\\n        bytes[] calldata _datas,\\n        address _origin\\n    ) external payable returns (bytes32[] memory responses);\\n}\\n\\ncontract ProviderModuleDSA is GelatoProviderModuleStandard {\\n    IndexInterface public immutable index;\\n    address public immutable gelatoCore;\\n\\n    constructor(IndexInterface _index, address _gelatoCore) {\\n        index = _index;\\n        gelatoCore = _gelatoCore;\\n    }\\n\\n    // ================= GELATO PROVIDER MODULE STANDARD ================\\n    function isProvided(\\n        address _userProxy,\\n        address,\\n        Task calldata\\n    ) external view override returns (string memory) {\\n        // Verify InstaDapp account identity\\n        if (ListInterface(index.list()).accountID(_userProxy) == 0)\\n            return \\\"ProviderModuleDSA.isProvided:InvalidUserProxy\\\";\\n\\n        // Is GelatoCore authorized\\n        if (!AccountInterface(_userProxy).isAuth(gelatoCore))\\n            return \\\"ProviderModuleDSA.isProvided:GelatoCoreNotAuth\\\";\\n\\n        // @dev commented out for gas savings\\n\\n        // // Is connector valid\\n        // ConnectorsInterface connectors = ConnectorsInterface(index.connectors(\\n        //     AccountInterface(_userProxy).version()\\n        // ));\\n\\n        // address[] memory targets = new address[](_task.actions.length);\\n        // for (uint i = 0; i < _task.actions.length; i++)\\n        //     targets[i] = _task.actions[i].addr;\\n\\n        // bool isShield = AccountInterface(_userProxy).shield();\\n        // if (isShield)\\n        //     if (!connectors.isStaticConnector(targets))\\n        //         return \\\"ProviderModuleDSA.isProvided:not-static-connector\\\";\\n        // else\\n        //     if (!connectors.isConnector(targets))\\n        //         return \\\"ProviderModuleDSA.isProvided:not-connector\\\";\\n\\n        return OK;\\n    }\\n\\n    /// @dev DS PROXY ONLY ALLOWS DELEGATE CALL for single actions, that's why we also use multisend\\n    function execPayload(\\n        uint256,\\n        address,\\n        address,\\n        Task calldata _task,\\n        uint256\\n    ) external view override returns (bytes memory payload, bool) {\\n        address[] memory targets = new address[](_task.actions.length);\\n        for (uint256 i = 0; i < _task.actions.length; i++)\\n            targets[i] = _task.actions[i].addr;\\n\\n        bytes[] memory datas = new bytes[](_task.actions.length);\\n        for (uint256 i = 0; i < _task.actions.length; i++)\\n            datas[i] = _task.actions[i].data;\\n\\n        payload = abi.encodeWithSelector(\\n            AccountInterface.cast.selector,\\n            targets,\\n            datas,\\n            gelatoCore\\n        );\\n    }\\n}\\n\",\"keccak256\":\"0xa2f4f67b54043c8176b165fbbc70ec5c23f057e6149639f97247392fc477c9a0\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "bytecode": "0x60c060405234801561001057600080fd5b50604051610af1380380610af183398101604081905261002f9161004d565b6001600160601b0319606092831b8116608052911b1660a05261009e565b6000806040838503121561005f578182fd5b825161006a81610086565b602084015190925061007b81610086565b809150509250929050565b6001600160a01b038116811461009b57600080fd5b50565b60805160601c60a05160601c610a1b6100d6600039806102c652806104b75280610577525080610331528061035b5250610a1b6000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806306fca7281461005c5780632986c0e5146100865780633e88ecf41461009b5780633f17c3df146100b0578063fe861b99146100d0575b600080fd5b61006f61006a3660046106d5565b6100d8565b60405161007d929190610889565b60405180910390f35b61008e61032f565b60405161007d91906107c7565b6100ae6100a9366004610668565b610353565b005b6100c36100be3660046105e8565b610357565b60405161007d91906108ad565b61008e610575565b60606000816100ea60208601866108c0565b905067ffffffffffffffff8111801561010257600080fd5b5060405190808252806020026020018201604052801561012c578160200160208202803683370190505b50905060005b61013f60208701876108c0565b90508110156101ab5761015560208701876108c0565b8281811061015f57fe5b90506020028101906101719190610953565b61017f9060208101906105b0565b82828151811061018b57fe5b6001600160a01b0390921660209283029190910190910152600101610132565b5060606101bb60208701876108c0565b905067ffffffffffffffff811180156101d357600080fd5b5060405190808252806020026020018201604052801561020757816020015b60608152602001906001900390816101f25790505b50905060005b61021a60208801886108c0565b90508110156102af5761023060208801886108c0565b8281811061023a57fe5b905060200281019061024c9190610953565b61025a90602081019061090e565b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250508451859250849150811061029c57fe5b602090810291909101015260010161020d565b5060405163e0e90acf60e01b906102ee90849084907f0000000000000000000000000000000000000000000000000000000000000000906024016107db565b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b03199093169290921790915299929850919650505050505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b5050565b60607f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316630f560cd76040518163ffffffff1660e01b815260040160206040518083038186803b1580156103b257600080fd5b505afa1580156103c6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ea91906105cc565b6001600160a01b0316636cfaf5e9856040518263ffffffff1660e01b815260040161041591906107c7565b60206040518083038186803b15801561042d57600080fd5b505afa158015610441573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104659190610747565b67ffffffffffffffff16610493576040518060600160405280602d815260200161098b602d9139905061056e565b604051632520e7ff60e01b81526001600160a01b03851690632520e7ff906104df907f0000000000000000000000000000000000000000000000000000000000000000906004016107c7565b60206040518083038186803b1580156104f757600080fd5b505afa15801561050b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061052f9190610648565b610553576040518060600160405280602e81526020016109b8602e9139905061056e565b506040805180820190915260028152614f4b60f01b60208201525b9392505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b6000608082840312156105aa578081fd5b50919050565b6000602082840312156105c1578081fd5b813561056e81610972565b6000602082840312156105dd578081fd5b815161056e81610972565b6000806000606084860312156105fc578182fd5b833561060781610972565b9250602084013561061781610972565b9150604084013567ffffffffffffffff811115610632578182fd5b61063e86828701610599565b9150509250925092565b600060208284031215610659578081fd5b8151801515811461056e578182fd5b6000806020838503121561067a578182fd5b823567ffffffffffffffff80821115610691578384fd5b818501915085601f8301126106a4578384fd5b8135818111156106b2578485fd5b8660208285010111156106c3578485fd5b60209290920196919550909350505050565b600080600080600060a086880312156106ec578081fd5b8535945060208601356106fe81610972565b9350604086013561070e81610972565b9250606086013567ffffffffffffffff811115610729578182fd5b61073588828901610599565b95989497509295608001359392505050565b600060208284031215610758578081fd5b815167ffffffffffffffff8116811461056e578182fd5b6001600160a01b03169052565b60008151808452815b818110156107a157602081850181015186830182015201610785565b818111156107b25782602083870101525b50601f01601f19169290920160200192915050565b6001600160a01b0391909116815260200190565b606080825284519082018190526000906020906080840190828801845b8281101561081d5781516001600160a01b0316845292840192908401906001016107f8565b5050508381038285015285518082528282019080840283018401888501865b8381101561086a57601f1986840301855261085883835161077c565b9487019492509086019060010161083c565b50508095505050505050610881604083018461076f565b949350505050565b60006040825261089c604083018561077c565b905082151560208301529392505050565b60006020825261056e602083018461077c565b6000808335601e198436030181126108d6578283fd5b83018035915067ffffffffffffffff8211156108f0578283fd5b602090810192508102360382131561090757600080fd5b9250929050565b6000808335601e19843603018112610924578283fd5b83018035915067ffffffffffffffff82111561093e578283fd5b60200191503681900382131561090757600080fd5b6000823560be19833603018112610968578182fd5b9190910192915050565b6001600160a01b038116811461098757600080fd5b5056fe50726f76696465724d6f64756c654453412e697350726f76696465643a496e76616c69645573657250726f787950726f76696465724d6f64756c654453412e697350726f76696465643a47656c61746f436f72654e6f7441757468a2646970667358221220ed9a8b8a7ffbdbb237dae76250e331414da309e991251ad3862fdb0b0b40ce7164736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806306fca7281461005c5780632986c0e5146100865780633e88ecf41461009b5780633f17c3df146100b0578063fe861b99146100d0575b600080fd5b61006f61006a3660046106d5565b6100d8565b60405161007d929190610889565b60405180910390f35b61008e61032f565b60405161007d91906107c7565b6100ae6100a9366004610668565b610353565b005b6100c36100be3660046105e8565b610357565b60405161007d91906108ad565b61008e610575565b60606000816100ea60208601866108c0565b905067ffffffffffffffff8111801561010257600080fd5b5060405190808252806020026020018201604052801561012c578160200160208202803683370190505b50905060005b61013f60208701876108c0565b90508110156101ab5761015560208701876108c0565b8281811061015f57fe5b90506020028101906101719190610953565b61017f9060208101906105b0565b82828151811061018b57fe5b6001600160a01b0390921660209283029190910190910152600101610132565b5060606101bb60208701876108c0565b905067ffffffffffffffff811180156101d357600080fd5b5060405190808252806020026020018201604052801561020757816020015b60608152602001906001900390816101f25790505b50905060005b61021a60208801886108c0565b90508110156102af5761023060208801886108c0565b8281811061023a57fe5b905060200281019061024c9190610953565b61025a90602081019061090e565b8080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250508451859250849150811061029c57fe5b602090810291909101015260010161020d565b5060405163e0e90acf60e01b906102ee90849084907f0000000000000000000000000000000000000000000000000000000000000000906024016107db565b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b03199093169290921790915299929850919650505050505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b5050565b60607f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316630f560cd76040518163ffffffff1660e01b815260040160206040518083038186803b1580156103b257600080fd5b505afa1580156103c6573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ea91906105cc565b6001600160a01b0316636cfaf5e9856040518263ffffffff1660e01b815260040161041591906107c7565b60206040518083038186803b15801561042d57600080fd5b505afa158015610441573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104659190610747565b67ffffffffffffffff16610493576040518060600160405280602d815260200161098b602d9139905061056e565b604051632520e7ff60e01b81526001600160a01b03851690632520e7ff906104df907f0000000000000000000000000000000000000000000000000000000000000000906004016107c7565b60206040518083038186803b1580156104f757600080fd5b505afa15801561050b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061052f9190610648565b610553576040518060600160405280602e81526020016109b8602e9139905061056e565b506040805180820190915260028152614f4b60f01b60208201525b9392505050565b7f000000000000000000000000000000000000000000000000000000000000000081565b6000608082840312156105aa578081fd5b50919050565b6000602082840312156105c1578081fd5b813561056e81610972565b6000602082840312156105dd578081fd5b815161056e81610972565b6000806000606084860312156105fc578182fd5b833561060781610972565b9250602084013561061781610972565b9150604084013567ffffffffffffffff811115610632578182fd5b61063e86828701610599565b9150509250925092565b600060208284031215610659578081fd5b8151801515811461056e578182fd5b6000806020838503121561067a578182fd5b823567ffffffffffffffff80821115610691578384fd5b818501915085601f8301126106a4578384fd5b8135818111156106b2578485fd5b8660208285010111156106c3578485fd5b60209290920196919550909350505050565b600080600080600060a086880312156106ec578081fd5b8535945060208601356106fe81610972565b9350604086013561070e81610972565b9250606086013567ffffffffffffffff811115610729578182fd5b61073588828901610599565b95989497509295608001359392505050565b600060208284031215610758578081fd5b815167ffffffffffffffff8116811461056e578182fd5b6001600160a01b03169052565b60008151808452815b818110156107a157602081850181015186830182015201610785565b818111156107b25782602083870101525b50601f01601f19169290920160200192915050565b6001600160a01b0391909116815260200190565b606080825284519082018190526000906020906080840190828801845b8281101561081d5781516001600160a01b0316845292840192908401906001016107f8565b5050508381038285015285518082528282019080840283018401888501865b8381101561086a57601f1986840301855261085883835161077c565b9487019492509086019060010161083c565b50508095505050505050610881604083018461076f565b949350505050565b60006040825261089c604083018561077c565b905082151560208301529392505050565b60006020825261056e602083018461077c565b6000808335601e198436030181126108d6578283fd5b83018035915067ffffffffffffffff8211156108f0578283fd5b602090810192508102360382131561090757600080fd5b9250929050565b6000808335601e19843603018112610924578283fd5b83018035915067ffffffffffffffff82111561093e578283fd5b60200191503681900382131561090757600080fd5b6000823560be19833603018112610968578182fd5b9190910192915050565b6001600160a01b038116811461098757600080fd5b5056fe50726f76696465724d6f64756c654453412e697350726f76696465643a496e76616c69645573657250726f787950726f76696465724d6f64756c654453412e697350726f76696465643a47656c61746f436f72654e6f7441757468a2646970667358221220ed9a8b8a7ffbdbb237dae76250e331414da309e991251ad3862fdb0b0b40ce7164736f6c63430007040033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "execPayload(uint256,address,address,((address,bytes)[],(address,bytes,uint8,uint8,uint256,bool)[],uint256,uint256),uint256)": {
+        "details": "DS PROXY ONLY ALLOWS DELEGATE CALL for single actions, that's why we also use multisend"
+      },
+      "execRevertCheck(bytes)": {
+        "details": "Overriding fns should revert with the revertMsg they detected on the userProxy"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

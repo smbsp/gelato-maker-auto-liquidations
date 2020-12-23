@@ -1,0 +1,178 @@
+{
+  "address": "0x3b50336E3E1E618FE74DF351966ebaD2B12cD24a",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_priceOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_oraclePayload",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minColRatio",
+          "type": "uint256"
+        }
+      ],
+      "name": "getConditionData",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_vaultId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_priceOracle",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_oraclePayload",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minColRatio",
+          "type": "uint256"
+        }
+      ],
+      "name": "isVaultUnsafe",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_conditionData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "ok",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xf3e7f9f39b6ca8a60cbfeaafb7fe65ddbb26e8ebd0d2b556ddac6aa1971098f4",
+  "receipt": {
+    "to": null,
+    "from": "0x5B753BF02a42bC73B5846dfd16a8F2e082b99a6a",
+    "contractAddress": "0x3b50336E3E1E618FE74DF351966ebaD2B12cD24a",
+    "transactionIndex": 185,
+    "gasUsed": "734696",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xe6699fa9b65f348b512dd910be5ff122294295879c1da3b607d51532cecceb4e",
+    "transactionHash": "0xf3e7f9f39b6ca8a60cbfeaafb7fe65ddbb26e8ebd0d2b556ddac6aa1971098f4",
+    "logs": [],
+    "blockNumber": 11348212,
+    "cumulativeGasUsed": "12063473",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "bf7cd3f181208953a3fd533c358cf962",
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_vaultId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_priceOracle\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_oraclePayload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_minColRatio\",\"type\":\"uint256\"}],\"name\":\"getConditionData\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_vaultId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_priceOracle\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_oraclePayload\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"_minColRatio\",\"type\":\"uint256\"}],\"name\":\"isVaultUnsafe\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_conditionData\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"ok\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Gelato Team\",\"kind\":\"dev\",\"methods\":{\"getConditionData(uint256,address,bytes,uint256)\":{\"details\":\"Use the return for your Task's Condition.data field off-chain.\",\"returns\":{\"_0\":\"The encoded payload for your Task's Condition.data field.\"}},\"isVaultUnsafe(uint256,address,bytes,uint256)\":{\"details\":\"The price oracle must return a uint256 WAD (10**18) value.\",\"params\":{\"_minColRatio\":\"The minimum collateral ratio measured in the price of the collateral as specified by the _priceOracle.\",\"_oraclePayload\":\"The data for making the staticcall to the oracle's read  method e.g. the selector for MakerOracle's read fn.\",\"_priceOracle\":\"The price oracle contract to supply the collateral price  e.g. Maker's ETH/USD oracle for ETH collateral pricing.\",\"_vaultId\":\"The id of the Maker vault\"},\"returns\":{\"_0\":\"OK if the Maker Vault is unsafe, otherwise some error message.\"}},\"ok(uint256,bytes,uint256)\":{\"details\":\"A standard interface for GelatoCore to read Conditions\",\"params\":{\"_conditionData\":\"The data you get from `getConditionData()`\"},\"returns\":{\"_0\":\"OK if the Condition is there, else some error message.\"}}},\"title\":\"ConditionMakerVaultUnsafe\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getConditionData(uint256,address,bytes,uint256)\":{\"notice\":\"Convenience function for off-chain _conditionData encoding\"},\"isVaultUnsafe(uint256,address,bytes,uint256)\":{\"notice\":\"Specific implementation of this Condition's ok function\"},\"ok(uint256,bytes,uint256)\":{\"notice\":\"Standard GelatoCore system function\"}},\"notice\":\"Condition tracking Maker vault collateralization safety requirements.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/contracts/gelato/conditions/ConditionMakerVaultUnsafe.sol\":\"ConditionMakerVaultUnsafe\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gelatonetwork/core/contracts/conditions/GelatoConditionsStandard.sol\":{\"content\":\"// \\\"SPDX-License-Identifier: UNLICENSED\\\"\\npragma solidity >=0.6.10;\\n\\nimport \\\"./IGelatoCondition.sol\\\";\\n\\nabstract contract GelatoConditionsStandard is IGelatoCondition {\\n    string internal constant OK = \\\"OK\\\";\\n}\\n\",\"keccak256\":\"0xa3d9ee5c4398914bbc0fe75fe54e57b73b8a4367caf9a40d9e5fd1ba9d4adb89\",\"license\":\"UNLICENSED\"},\"@gelatonetwork/core/contracts/conditions/IGelatoCondition.sol\":{\"content\":\"// \\\"SPDX-License-Identifier: UNLICENSED\\\"\\npragma solidity >=0.6.10;\\npragma experimental ABIEncoderV2;\\n\\n/// @title IGelatoCondition - solidity interface of GelatoConditionsStandard\\n/// @notice all the APIs of GelatoConditionsStandard\\n/// @dev all the APIs are implemented inside GelatoConditionsStandard\\ninterface IGelatoCondition {\\n\\n    /// @notice GelatoCore calls this to verify securely the specified Condition securely\\n    /// @dev Be careful only to encode a Task's condition.data as is and not with the\\n    ///  \\\"ok\\\" selector or _taskReceiptId, since those two things are handled by GelatoCore.\\n    /// @param _taskReceiptId This is passed by GelatoCore so we can rely on it as a secure\\n    ///  source of Task identification.\\n    /// @param _conditionData This is the Condition.data field developers must encode their\\n    ///  Condition's specific parameters in.\\n    /// @param _cycleId For Tasks that are executed as part of a cycle.\\n    function ok(uint256 _taskReceiptId, bytes calldata _conditionData, uint256 _cycleId)\\n        external\\n        view\\n        returns(string memory);\\n}\",\"keccak256\":\"0xd07607af93227ec5f8c2f5401289937b98c298f0d2398c1ba7410f82a6253964\",\"license\":\"UNLICENSED\"},\"contracts/contracts/gelato/conditions/ConditionMakerVaultUnsafe.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\npragma experimental ABIEncoderV2;\\n\\nimport {\\n    GelatoConditionsStandard\\n} from \\\"@gelatonetwork/core/contracts/conditions/GelatoConditionsStandard.sol\\\";\\nimport {wmul, wdiv} from \\\"../../../vendor/DSMath.sol\\\";\\nimport {GelatoBytes} from \\\"../../../lib/GelatoBytes.sol\\\";\\nimport {\\n    IInstaMakerResolver\\n} from \\\"../../../interfaces/InstaDapp/resolvers/IInstaMakerResolver.sol\\\";\\n\\n/// @title ConditionMakerVaultUnsafe\\n/// @notice Condition tracking Maker vault collateralization safety requirements.\\n/// @author Gelato Team\\ncontract ConditionMakerVaultUnsafe is GelatoConditionsStandard {\\n    using GelatoBytes for bytes;\\n\\n    /// @notice Convenience function for off-chain _conditionData encoding\\n    /// @dev Use the return for your Task's Condition.data field off-chain.\\n    /// @return The encoded payload for your Task's Condition.data field.\\n    function getConditionData(\\n        uint256 _vaultId,\\n        address _priceOracle,\\n        bytes calldata _oraclePayload,\\n        uint256 _minColRatio\\n    ) public pure virtual returns (bytes memory) {\\n        return\\n            abi.encodeWithSelector(\\n                this.isVaultUnsafe.selector,\\n                _vaultId,\\n                _priceOracle,\\n                _oraclePayload,\\n                _minColRatio\\n            );\\n    }\\n\\n    /// @notice Standard GelatoCore system function\\n    /// @dev A standard interface for GelatoCore to read Conditions\\n    /// @param _conditionData The data you get from `getConditionData()`\\n    /// @return OK if the Condition is there, else some error message.\\n    function ok(\\n        uint256,\\n        bytes calldata _conditionData,\\n        uint256\\n    ) public view virtual override returns (string memory) {\\n        (\\n            uint256 _vaultID,\\n            address _priceOracle,\\n            bytes memory _oraclePayload,\\n            uint256 _minColRatio\\n        ) = abi.decode(_conditionData[4:], (uint256, address, bytes, uint256));\\n\\n        return\\n            isVaultUnsafe(_vaultID, _priceOracle, _oraclePayload, _minColRatio);\\n    }\\n\\n    /// @notice Specific implementation of this Condition's ok function\\n    /// @dev The price oracle must return a uint256 WAD (10**18) value.\\n    /// @param _vaultId The id of the Maker vault\\n    /// @param _priceOracle The price oracle contract to supply the collateral price\\n    ///  e.g. Maker's ETH/USD oracle for ETH collateral pricing.\\n    /// @param _oraclePayload The data for making the staticcall to the oracle's read\\n    ///  method e.g. the selector for MakerOracle's read fn.\\n    /// @param _minColRatio The minimum collateral ratio measured in the price\\n    /// of the collateral as specified by the _priceOracle.\\n    /// @return OK if the Maker Vault is unsafe, otherwise some error message.\\n    function isVaultUnsafe(\\n        uint256 _vaultId,\\n        address _priceOracle,\\n        bytes memory _oraclePayload,\\n        uint256 _minColRatio\\n    ) public view virtual returns (string memory) {\\n        (bool success, bytes memory returndata) =\\n            _priceOracle.staticcall(_oraclePayload);\\n\\n        if (!success) {\\n            returndata.revertWithError(\\n                \\\"ConditionMakerVaultUnsafe.isVaultUnsafe:oracle:\\\"\\n            );\\n        }\\n\\n        uint256 colPriceInWad = abi.decode(returndata, (uint256));\\n\\n        IInstaMakerResolver.VaultData memory vault =\\n            IInstaMakerResolver(0x0A7008B38E7015F8C36A49eEbc32513ECA8801E5)\\n                .getVaultById(_vaultId);\\n\\n        uint256 colRatio =\\n            wdiv(wmul(vault.collateral, colPriceInWad), vault.debt);\\n\\n        return colRatio < _minColRatio ? OK : \\\"MakerVaultNotUnsafe\\\";\\n    }\\n}\\n\",\"keccak256\":\"0x9e2e7031bb676207685a940942814e15d6b3608e203aa510349a85f55b78d33d\",\"license\":\"UNLICENSED\"},\"contracts/interfaces/InstaDapp/resolvers/IInstaMakerResolver.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\npragma experimental ABIEncoderV2;\\n\\ninterface IInstaMakerResolver {\\n    struct VaultData {\\n        uint256 id;\\n        address owner;\\n        string colType;\\n        uint256 collateral;\\n        uint256 art;\\n        uint256 debt;\\n        uint256 liquidatedCol;\\n        uint256 borrowRate;\\n        uint256 colPrice;\\n        uint256 liquidationRatio;\\n        address vaultAddress;\\n    }\\n\\n    function getVaultById(uint256 id) external view returns (VaultData memory);\\n}\\n\",\"keccak256\":\"0x9f5dfebe60dbddfcd90df75a023603c5220c28c21355ef20b1e5fb15f1f4f58d\",\"license\":\"UNLICENSED\"},\"contracts/lib/GelatoBytes.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.4;\\n\\nlibrary GelatoBytes {\\n    function calldataSliceSelector(bytes calldata _bytes)\\n        internal\\n        pure\\n        returns (bytes4 selector)\\n    {\\n        selector =\\n            _bytes[0] |\\n            (bytes4(_bytes[1]) >> 8) |\\n            (bytes4(_bytes[2]) >> 16) |\\n            (bytes4(_bytes[3]) >> 24);\\n    }\\n\\n    function memorySliceSelector(bytes memory _bytes)\\n        internal\\n        pure\\n        returns (bytes4 selector)\\n    {\\n        selector =\\n            _bytes[0] |\\n            (bytes4(_bytes[1]) >> 8) |\\n            (bytes4(_bytes[2]) >> 16) |\\n            (bytes4(_bytes[3]) >> 24);\\n    }\\n\\n    function revertWithError(bytes memory _bytes, string memory _tracingInfo)\\n        internal\\n        pure\\n    {\\n        // 68: 32-location, 32-length, 4-ErrorSelector, UTF-8 err\\n        if (_bytes.length % 32 == 4) {\\n            bytes4 selector;\\n            assembly {\\n                selector := mload(add(0x20, _bytes))\\n            }\\n            if (selector == 0x08c379a0) {\\n                // Function selector for Error(string)\\n                assembly {\\n                    _bytes := add(_bytes, 68)\\n                }\\n                revert(string(abi.encodePacked(_tracingInfo, string(_bytes))));\\n            } else {\\n                revert(\\n                    string(abi.encodePacked(_tracingInfo, \\\"NoErrorSelector\\\"))\\n                );\\n            }\\n        } else {\\n            revert(\\n                string(abi.encodePacked(_tracingInfo, \\\"UnexpectedReturndata\\\"))\\n            );\\n        }\\n    }\\n\\n    function returnError(bytes memory _bytes, string memory _tracingInfo)\\n        internal\\n        pure\\n        returns (string memory)\\n    {\\n        // 68: 32-location, 32-length, 4-ErrorSelector, UTF-8 err\\n        if (_bytes.length % 32 == 4) {\\n            bytes4 selector;\\n            assembly {\\n                selector := mload(add(0x20, _bytes))\\n            }\\n            if (selector == 0x08c379a0) {\\n                // Function selector for Error(string)\\n                assembly {\\n                    _bytes := add(_bytes, 68)\\n                }\\n                return string(abi.encodePacked(_tracingInfo, string(_bytes)));\\n            } else {\\n                return\\n                    string(abi.encodePacked(_tracingInfo, \\\"NoErrorSelector\\\"));\\n            }\\n        } else {\\n            return\\n                string(abi.encodePacked(_tracingInfo, \\\"UnexpectedReturndata\\\"));\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x9038c820e041814ca2311bf582f2123171865b36c9438a7c6f85eb99406ec45c\",\"license\":\"UNLICENSED\"},\"contracts/vendor/DSMath.sol\":{\"content\":\"// \\\"SPDX-License-Identifier: AGPL-3.0-or-later\\\"\\n/// math.sol -- mixin for inline numerical wizardry\\n\\n// This program is free software: you can redistribute it and/or modify\\n// it under the terms of the GNU General Public License as published by\\n// the Free Software Foundation, either version 3 of the License, or\\n// (at your option) any later version.\\n\\n// This program is distributed in the hope that it will be useful,\\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\\n// GNU General Public License for more details.\\n\\n// You should have received a copy of the GNU General Public License\\n// along with this program.  If not, see <http://www.gnu.org/licenses/>.\\n\\npragma solidity 0.7.4;\\n\\nfunction add(uint256 x, uint256 y) pure returns (uint256 z) {\\n    require((z = x + y) >= x, \\\"ds-math-add-overflow\\\");\\n}\\n\\nfunction sub(uint256 x, uint256 y) pure returns (uint256 z) {\\n    require((z = x - y) <= x, \\\"ds-math-sub-underflow\\\");\\n}\\n\\nfunction mul(uint256 x, uint256 y) pure returns (uint256 z) {\\n    require(y == 0 || (z = x * y) / y == x, \\\"ds-math-mul-overflow\\\");\\n}\\n\\nfunction min(uint256 x, uint256 y) pure returns (uint256 z) {\\n    return x <= y ? x : y;\\n}\\n\\nfunction max(uint256 x, uint256 y) pure returns (uint256 z) {\\n    return x >= y ? x : y;\\n}\\n\\nfunction imin(int256 x, int256 y) pure returns (int256 z) {\\n    return x <= y ? x : y;\\n}\\n\\nfunction imax(int256 x, int256 y) pure returns (int256 z) {\\n    return x >= y ? x : y;\\n}\\n\\nuint256 constant WAD = 10**18;\\nuint256 constant RAY = 10**27;\\n\\n//rounds to zero if x*y < WAD / 2\\nfunction wmul(uint256 x, uint256 y) pure returns (uint256 z) {\\n    z = add(mul(x, y), WAD / 2) / WAD;\\n}\\n\\n//rounds to zero if x*y < WAD / 2\\nfunction rmul(uint256 x, uint256 y) pure returns (uint256 z) {\\n    z = add(mul(x, y), RAY / 2) / RAY;\\n}\\n\\n//rounds to zero if x*y < WAD / 2\\nfunction wdiv(uint256 x, uint256 y) pure returns (uint256 z) {\\n    z = add(mul(x, WAD), y / 2) / y;\\n}\\n\\n//rounds to zero if x*y < RAY / 2\\nfunction rdiv(uint256 x, uint256 y) pure returns (uint256 z) {\\n    z = add(mul(x, RAY), y / 2) / y;\\n}\\n\\n// This famous algorithm is called \\\"exponentiation by squaring\\\"\\n// and calculates x^n with x as fixed-point and n as regular unsigned.\\n//\\n// It's O(log n), instead of O(n) for naive repeated multiplication.\\n//\\n// These facts are why it works:\\n//\\n//  If n is even, then x^n = (x^2)^(n/2).\\n//  If n is odd,  then x^n = x * x^(n-1),\\n//   and applying the equation for even x gives\\n//    x^n = x * (x^2)^((n-1) / 2).\\n//\\n//  Also, EVM division is flooring and\\n//    floor[(n-1) / 2] = floor[n / 2].\\n//\\nfunction rpow(uint256 x, uint256 n) pure returns (uint256 z) {\\n    z = n % 2 != 0 ? x : RAY;\\n\\n    for (n /= 2; n != 0; n /= 2) {\\n        x = rmul(x, x);\\n\\n        if (n % 2 != 0) {\\n            z = rmul(z, x);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa0b7c69e573cd75641300eaa6f8dffd94d1334b1561079e75aa9e740689f30f7\",\"license\":\"AGPL-3.0-or-later\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610c54806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80635d392c301461004657806377301f811461006f578063a99891c514610082575b600080fd5b610059610054366004610a18565b610095565b6040516100669190610ac6565b60405180910390f35b61005961007d3660046109b6565b61024e565b610059610090366004610a2d565b6102ae565b606060006060856001600160a01b0316856040516100b39190610aaa565b600060405180830381855afa9150503d80600081146100ee576040519150601f19603f3d011682016040523d82523d6000602084013e6100f3565b606091505b509150915081610120576101206040518060600160405280602f8152602001610bf0602f913982906102f0565b600081806020019051810190610136919061093f565b90506101406106f0565b604051634a3843bb60e11b8152730a7008b38e7015f8c36a49eebc32513eca8801e590639470877690610177908c90600401610ae0565b60006040518083038186803b15801561018f57600080fd5b505afa1580156101a3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526101cb9190810190610853565b905060006101ea6101e08360600151856105df565b8360a00151610618565b905086811061022457604051806040016040528060138152602001724d616b65725661756c744e6f74556e7361666560681b815250610240565b604051806040016040528060028152602001614f4b60f01b8152505b9a9950505050505050505050565b6060635d392c3060e01b8686868686604051602401610271959493929190610ae9565b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b031990931692909217909152905095945050505050565b606060008082816102c2876004818b610b7f565b8101906102cf9190610957565b93509350935093506102e384848484610095565b9998505050505050505050565b60208251816102fb57fe5b066004141561051857602082015162461bcd60e51b6001600160e01b0319821614156104565760448301925081836040516020018083805190602001908083835b6020831061035b5780518252601f19909201916020918201910161033c565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b602083106103a35780518252601f199092019160209182019101610384565b51815160209384036101000a60001901801990921691161790526040805192909401828103601f190183529384905262461bcd60e51b84526004840181815282516024860152825192975095508594506044909301928601915080838360005b8381101561041b578181015183820152602001610403565b50505050905090810190601f1680156104485780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b816040516020018082805190602001908083835b602083106104895780518252601f19909201916020918201910161046a565b51815160001960209485036101000a0190811690199091161790526e2737a2b93937b929b2b632b1ba37b960891b9390910192835260408051601019818603018152600f85019182905262461bcd60e51b90915260138401828152815160338601528151919650945084936053019250908501908083836000831561041b578181015183820152602001610403565b806040516020018082805190602001908083835b6020831061054b5780518252601f19909201916020918201910161052c565b51815160001960209485036101000a01908116901990911617905273556e657870656374656452657475726e6461746160601b9390910192835260408051600b19818603018152601485019182905262461bcd60e51b90915260188401828152815160388601528151919650945084936058019250908501908083836000831561041b578181015183820152602001610403565b6000670de0b6b3a76400006106096105f78585610638565b6002670de0b6b3a76400005b046106a1565b8161061057fe5b049392505050565b60008161060961063085670de0b6b3a7640000610638565b600285610603565b60008115806106535750508082028282828161065057fe5b04145b61069b576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6d756c2d6f766572666c6f7760601b604482015290519081900360640190fd5b92915050565b8082018281101561069b576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6164642d6f766572666c6f7760601b604482015290519081900360640190fd5b6040518061016001604052806000815260200160006001600160a01b03168152602001606081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160006001600160a01b031681525090565b805161076781610bd7565b919050565b60008083601f84011261077d578182fd5b50813567ffffffffffffffff811115610794578182fd5b6020830191508360208285010111156107ac57600080fd5b9250929050565b600082601f8301126107c3578081fd5b81356107d66107d182610b5d565b610b39565b91508082528360208285010111156107ed57600080fd5b8060208401602084013760009082016020015292915050565b600082601f830112610816578081fd5b81516108246107d182610b5d565b915080825283602082850101111561083b57600080fd5b61084c816020840160208601610ba7565b5092915050565b600060208284031215610864578081fd5b815167ffffffffffffffff8082111561087b578283fd5b8184019150610160808387031215610891578384fd5b61089a81610b39565b9050825181526108ac6020840161075c565b60208201526040830151828111156108c2578485fd5b6108ce87828601610806565b604083015250606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e08201526101009150818301518282015261012091508183015182820152610140915061093082840161075c565b91810191909152949350505050565b600060208284031215610950578081fd5b5051919050565b6000806000806080858703121561096c578283fd5b84359350602085013561097e81610bd7565b9250604085013567ffffffffffffffff811115610999578283fd5b6109a5878288016107b3565b949793965093946060013593505050565b6000806000806000608086880312156109cd578081fd5b8535945060208601356109df81610bd7565b9350604086013567ffffffffffffffff8111156109fa578182fd5b610a068882890161076c565b96999598509660600135949350505050565b6000806000806080858703121561096c578384fd5b60008060008060608587031215610a42578384fd5b84359350602085013567ffffffffffffffff811115610a5f578384fd5b610a6b8782880161076c565b9598909750949560400135949350505050565b60008151808452610a96816020860160208601610ba7565b601f01601f19169290920160200192915050565b60008251610abc818460208701610ba7565b9190910192915050565b600060208252610ad96020830184610a7e565b9392505050565b90815260200190565b8581526001600160a01b038516602082015260806040820181905281018390526000838560a08401378060a0858401015260a0601f19601f86011683010190508260608301529695505050505050565b60405181810167ffffffffffffffff81118282101715610b5557fe5b604052919050565b600067ffffffffffffffff821115610b7157fe5b50601f01601f191660200190565b60008085851115610b8e578182fd5b83861115610b9a578182fd5b5050820193919092039150565b60005b83811015610bc2578181015183820152602001610baa565b83811115610bd1576000848401525b50505050565b6001600160a01b0381168114610bec57600080fd5b5056fe436f6e646974696f6e4d616b65725661756c74556e736166652e69735661756c74556e736166653a6f7261636c653aa26469706673582212207c6053d82854fa60f6abc4ca814392961dd71d36062712fc91aebb0ba12d625c64736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80635d392c301461004657806377301f811461006f578063a99891c514610082575b600080fd5b610059610054366004610a18565b610095565b6040516100669190610ac6565b60405180910390f35b61005961007d3660046109b6565b61024e565b610059610090366004610a2d565b6102ae565b606060006060856001600160a01b0316856040516100b39190610aaa565b600060405180830381855afa9150503d80600081146100ee576040519150601f19603f3d011682016040523d82523d6000602084013e6100f3565b606091505b509150915081610120576101206040518060600160405280602f8152602001610bf0602f913982906102f0565b600081806020019051810190610136919061093f565b90506101406106f0565b604051634a3843bb60e11b8152730a7008b38e7015f8c36a49eebc32513eca8801e590639470877690610177908c90600401610ae0565b60006040518083038186803b15801561018f57600080fd5b505afa1580156101a3573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f191682016040526101cb9190810190610853565b905060006101ea6101e08360600151856105df565b8360a00151610618565b905086811061022457604051806040016040528060138152602001724d616b65725661756c744e6f74556e7361666560681b815250610240565b604051806040016040528060028152602001614f4b60f01b8152505b9a9950505050505050505050565b6060635d392c3060e01b8686868686604051602401610271959493929190610ae9565b60408051601f198184030181529190526020810180516001600160e01b03166001600160e01b031990931692909217909152905095945050505050565b606060008082816102c2876004818b610b7f565b8101906102cf9190610957565b93509350935093506102e384848484610095565b9998505050505050505050565b60208251816102fb57fe5b066004141561051857602082015162461bcd60e51b6001600160e01b0319821614156104565760448301925081836040516020018083805190602001908083835b6020831061035b5780518252601f19909201916020918201910161033c565b51815160209384036101000a600019018019909216911617905285519190930192850191508083835b602083106103a35780518252601f199092019160209182019101610384565b51815160209384036101000a60001901801990921691161790526040805192909401828103601f190183529384905262461bcd60e51b84526004840181815282516024860152825192975095508594506044909301928601915080838360005b8381101561041b578181015183820152602001610403565b50505050905090810190601f1680156104485780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b816040516020018082805190602001908083835b602083106104895780518252601f19909201916020918201910161046a565b51815160001960209485036101000a0190811690199091161790526e2737a2b93937b929b2b632b1ba37b960891b9390910192835260408051601019818603018152600f85019182905262461bcd60e51b90915260138401828152815160338601528151919650945084936053019250908501908083836000831561041b578181015183820152602001610403565b806040516020018082805190602001908083835b6020831061054b5780518252601f19909201916020918201910161052c565b51815160001960209485036101000a01908116901990911617905273556e657870656374656452657475726e6461746160601b9390910192835260408051600b19818603018152601485019182905262461bcd60e51b90915260188401828152815160388601528151919650945084936058019250908501908083836000831561041b578181015183820152602001610403565b6000670de0b6b3a76400006106096105f78585610638565b6002670de0b6b3a76400005b046106a1565b8161061057fe5b049392505050565b60008161060961063085670de0b6b3a7640000610638565b600285610603565b60008115806106535750508082028282828161065057fe5b04145b61069b576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6d756c2d6f766572666c6f7760601b604482015290519081900360640190fd5b92915050565b8082018281101561069b576040805162461bcd60e51b815260206004820152601460248201527364732d6d6174682d6164642d6f766572666c6f7760601b604482015290519081900360640190fd5b6040518061016001604052806000815260200160006001600160a01b03168152602001606081526020016000815260200160008152602001600081526020016000815260200160008152602001600081526020016000815260200160006001600160a01b031681525090565b805161076781610bd7565b919050565b60008083601f84011261077d578182fd5b50813567ffffffffffffffff811115610794578182fd5b6020830191508360208285010111156107ac57600080fd5b9250929050565b600082601f8301126107c3578081fd5b81356107d66107d182610b5d565b610b39565b91508082528360208285010111156107ed57600080fd5b8060208401602084013760009082016020015292915050565b600082601f830112610816578081fd5b81516108246107d182610b5d565b915080825283602082850101111561083b57600080fd5b61084c816020840160208601610ba7565b5092915050565b600060208284031215610864578081fd5b815167ffffffffffffffff8082111561087b578283fd5b8184019150610160808387031215610891578384fd5b61089a81610b39565b9050825181526108ac6020840161075c565b60208201526040830151828111156108c2578485fd5b6108ce87828601610806565b604083015250606083015160608201526080830151608082015260a083015160a082015260c083015160c082015260e083015160e08201526101009150818301518282015261012091508183015182820152610140915061093082840161075c565b91810191909152949350505050565b600060208284031215610950578081fd5b5051919050565b6000806000806080858703121561096c578283fd5b84359350602085013561097e81610bd7565b9250604085013567ffffffffffffffff811115610999578283fd5b6109a5878288016107b3565b949793965093946060013593505050565b6000806000806000608086880312156109cd578081fd5b8535945060208601356109df81610bd7565b9350604086013567ffffffffffffffff8111156109fa578182fd5b610a068882890161076c565b96999598509660600135949350505050565b6000806000806080858703121561096c578384fd5b60008060008060608587031215610a42578384fd5b84359350602085013567ffffffffffffffff811115610a5f578384fd5b610a6b8782880161076c565b9598909750949560400135949350505050565b60008151808452610a96816020860160208601610ba7565b601f01601f19169290920160200192915050565b60008251610abc818460208701610ba7565b9190910192915050565b600060208252610ad96020830184610a7e565b9392505050565b90815260200190565b8581526001600160a01b038516602082015260806040820181905281018390526000838560a08401378060a0858401015260a0601f19601f86011683010190508260608301529695505050505050565b60405181810167ffffffffffffffff81118282101715610b5557fe5b604052919050565b600067ffffffffffffffff821115610b7157fe5b50601f01601f191660200190565b60008085851115610b8e578182fd5b83861115610b9a578182fd5b5050820193919092039150565b60005b83811015610bc2578181015183820152602001610baa565b83811115610bd1576000848401525b50505050565b6001600160a01b0381168114610bec57600080fd5b5056fe436f6e646974696f6e4d616b65725661756c74556e736166652e69735661756c74556e736166653a6f7261636c653aa26469706673582212207c6053d82854fa60f6abc4ca814392961dd71d36062712fc91aebb0ba12d625c64736f6c63430007040033",
+  "devdoc": {
+    "author": "Gelato Team",
+    "kind": "dev",
+    "methods": {
+      "getConditionData(uint256,address,bytes,uint256)": {
+        "details": "Use the return for your Task's Condition.data field off-chain.",
+        "returns": {
+          "_0": "The encoded payload for your Task's Condition.data field."
+        }
+      },
+      "isVaultUnsafe(uint256,address,bytes,uint256)": {
+        "details": "The price oracle must return a uint256 WAD (10**18) value.",
+        "params": {
+          "_minColRatio": "The minimum collateral ratio measured in the price of the collateral as specified by the _priceOracle.",
+          "_oraclePayload": "The data for making the staticcall to the oracle's read  method e.g. the selector for MakerOracle's read fn.",
+          "_priceOracle": "The price oracle contract to supply the collateral price  e.g. Maker's ETH/USD oracle for ETH collateral pricing.",
+          "_vaultId": "The id of the Maker vault"
+        },
+        "returns": {
+          "_0": "OK if the Maker Vault is unsafe, otherwise some error message."
+        }
+      },
+      "ok(uint256,bytes,uint256)": {
+        "details": "A standard interface for GelatoCore to read Conditions",
+        "params": {
+          "_conditionData": "The data you get from `getConditionData()`"
+        },
+        "returns": {
+          "_0": "OK if the Condition is there, else some error message."
+        }
+      }
+    },
+    "title": "ConditionMakerVaultUnsafe",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getConditionData(uint256,address,bytes,uint256)": {
+        "notice": "Convenience function for off-chain _conditionData encoding"
+      },
+      "isVaultUnsafe(uint256,address,bytes,uint256)": {
+        "notice": "Specific implementation of this Condition's ok function"
+      },
+      "ok(uint256,bytes,uint256)": {
+        "notice": "Standard GelatoCore system function"
+      }
+    },
+    "notice": "Condition tracking Maker vault collateralization safety requirements.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
